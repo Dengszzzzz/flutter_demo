@@ -1,17 +1,17 @@
 buildscript {
     repositories {
-        google()
+        maven { url 'http://localhost:18081/artifactory/android_group' }
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:4.2.1'
     }
 }
 
 allprojects {
     repositories {
-        google()
+        maven { url 'http://localhost:18081/artifactory/android_group' }
         mavenCentral()
     }
 }
