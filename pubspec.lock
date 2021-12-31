@@ -88,6 +88,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_webview_plugin:
+    dependency: "direct main"
+    description:
+      name: flutter_webview_plugin
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.4.0"
   http_parser:
     dependency: transitive
     description:
@@ -186,4 +193,4 @@ packages:
     version: "2.1.1"
 sdks:
   dart: ">=2.15.0 <3.0.0"
-  flutter: ">=0.1.2"
+  flutter: ">=2.0.0"
