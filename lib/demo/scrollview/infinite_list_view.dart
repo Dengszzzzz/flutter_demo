@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 /// 循环listview
 class InfiniteListView extends StatefulWidget {
-  const InfiniteListView({Key key}) : super(key: key);
+  const InfiniteListView({Key? key}) : super(key: key);
 
   @override
   _InfiniteListViewState createState() => _InfiniteListViewState();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CounterWidget extends StatefulWidget {
-  const CounterWidget({Key key, this.initValue = 0});
+  const CounterWidget({Key? key, this.initValue = 0});
 
   final int initValue;
 
