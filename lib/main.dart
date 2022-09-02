@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/demo/scrollview/infinite_list_view.dart';
+import 'package:flutter_demo/guide/03/main_base_widget_route.dart';
+import 'package:flutter_demo/guide/03/text_test_route.dart';
+import 'package:flutter_demo/guide/04/main_layout_widget_route.dart';
 import 'package:flutter_demo/guide/07/colorAndTheme/color_test_route.dart';
 import 'package:flutter_demo/guide/07/colorAndTheme/theme_test_route.dart';
 import 'package:flutter_demo/guide/07/future_builder_test_route.dart';
@@ -14,6 +17,7 @@ import 'guide/07/dialog/alert_dialog_test_route.dart';
 import 'guide/08/drag_test_route.dart';
 import 'guide/08/gesture_test_route.dart';
 import 'guide/08/pointer_move_test_route.dart';
+import 'util.dart';
 
 void main() => runApp(ArticleApp());
 
@@ -31,6 +35,16 @@ class ArticleApp extends StatelessWidget {
               style: TextStyle(color: Colors.white)
           ),
         ),
+        body: Builder(builder: (context) {
+          return Column(
+            children: [
+              createItem(context, const MainBaseWidgetRoute(), "03.基础组件"),
+              createItem(context, const MainLayoutWidgetRoute(), "04.布局组件"),
+            ],
+          );
+        }),
+
+
         ///07.功能型组件
         //body: InheritedWidgetTestRoute(),
         //body: ProviderRoute(),
@@ -45,7 +59,7 @@ class ArticleApp extends StatelessWidget {
         //body: PointerMoveTestRoute(),
         //body: GestureTestRoute(),
         //body: DragTestRoute(),
-        body: NotificationTestRoute(),
+        //body: NotificationTestRoute(),
 
         // body: new InfiniteListView(),
         //body: new ArticlePage(),
@@ -53,5 +67,6 @@ class ArticleApp extends StatelessWidget {
     );
     return Container();
   }
+
 }
 
