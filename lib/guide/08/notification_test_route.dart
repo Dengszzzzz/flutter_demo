@@ -12,7 +12,11 @@ class _NotificationTestRouteState extends State<NotificationTestRoute> {
   Widget build(BuildContext context) {
     // NotificationListener<ScrollEndNotification>
     // 也可以指定模板参数，这样onNotification 只会回调 ScrollEndNotification 时才回调。
-    return NotificationListener(
+    return Scaffold(
+        appBar: AppBar(
+        title: Text("07.功能型组件"),
+    ),
+    body: NotificationListener(
       onNotification: (notification) {
         switch (notification.runtimeType) {
           case ScrollStartNotification:
@@ -38,6 +42,6 @@ class _NotificationTestRouteState extends State<NotificationTestRoute> {
           );
         },
       ),
-    );
+    ));
   }
 }

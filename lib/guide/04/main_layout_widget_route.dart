@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/guide/04/align_test_route.dart';
 import 'package:flutter_demo/guide/04/constraints_test_route.dart';
 import 'package:flutter_demo/guide/04/flex_test_route.dart';
+import 'package:flutter_demo/guide/04/layout_builder_test_route.dart';
 import 'package:flutter_demo/guide/04/row_test_route.dart';
 import 'package:flutter_demo/guide/04/wrap_test_route.dart';
 import 'package:flutter_demo/util.dart';
@@ -27,6 +28,7 @@ class MainLayoutWidgetRoute extends StatelessWidget {
           createItem(context, const WrapTestRoute(), "流式布局 Wrap、Flow"),
           createItem(context, const StackTestRoute(), "层叠布局 Stack、Positioned"),
           createItem(context, const AlignTestRoute(), "对齐与相对定位 Align"),
+          createItem(context, const LayoutBuilderTestRoute(), "LayoutBuilder"),
         ],
       ),
     );

@@ -12,7 +12,11 @@ class StreamBuilderTestRoute extends StatefulWidget {
 class _StreamBuilderTestRouteState extends State<StreamBuilderTestRoute> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+        appBar: AppBar(
+        title: Text("07.功能型组件"),
+    ),
+    body: Center(
       child: StreamBuilder<int>(
         stream: counter(),
         builder: (BuildContext context, AsyncSnapshot<int> snapshot){
@@ -31,7 +35,7 @@ class _StreamBuilderTestRouteState extends State<StreamBuilderTestRoute> {
           }
         },
       ),
-    );
+    ));
   }
 }
 

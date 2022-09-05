@@ -10,7 +10,11 @@ class FutureBuilderTestRoute extends StatefulWidget {
 class _FutureBuilderTestRouteState extends State<FutureBuilderTestRoute> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+        appBar: AppBar(
+        title: Text("07.功能型组件"),
+    ),
+    body: Center(
       child: FutureBuilder<String>(
         future: mockNetworkData(),
         builder: (BuildContext context, AsyncSnapshot<String> snapshot){
@@ -25,7 +29,7 @@ class _FutureBuilderTestRouteState extends State<FutureBuilderTestRoute> {
           }
         },
       ),
-    );
+    ));
   }
 }
 

@@ -16,35 +16,39 @@ class _InheritedWidgetTestRouteState extends State<InheritedWidgetTestRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ShareDataWidget(
-        data: count,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-             const Padding(
-              padding: EdgeInsets.only(bottom: 20.0),
-              child: _TestWidget(),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    ++count;
-                    print("count:$count");
-                  });
-                },
-                child: const Text("Increment")),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("07.功能型组件"),
+      ),
+      body: Center(
+        child: ShareDataWidget(
+          data: count,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(bottom: 20.0),
+                child: _TestWidget(),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      ++count;
+                      print("count:$count");
+                    });
+                  },
+                  child: const Text("Increment")),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-
 ///子树
 class _TestWidget extends StatefulWidget {
-  const _TestWidget({ Key? key }) : super(key: key);
+  const _TestWidget({Key? key}) : super(key: key);
 
   @override
   __TestWidgetState createState() => __TestWidgetState();

@@ -3,13 +3,17 @@ import 'package:flutter_demo/demo/scrollview/infinite_list_view.dart';
 import 'package:flutter_demo/guide/03/main_base_widget_route.dart';
 import 'package:flutter_demo/guide/03/text_test_route.dart';
 import 'package:flutter_demo/guide/04/main_layout_widget_route.dart';
+import 'package:flutter_demo/guide/05/main_container_widget_route.dart';
+import 'package:flutter_demo/guide/06/main_scroll_widget_route.dart';
 import 'package:flutter_demo/guide/07/colorAndTheme/color_test_route.dart';
 import 'package:flutter_demo/guide/07/colorAndTheme/theme_test_route.dart';
 import 'package:flutter_demo/guide/07/future_builder_test_route.dart';
 import 'package:flutter_demo/guide/07/inheritedWidget/inherited_widget_test_route.dart';
+import 'package:flutter_demo/guide/07/main_function_widget_route.dart';
 import 'package:flutter_demo/guide/07/provider/provider_route.dart';
 import 'package:flutter_demo/guide/07/stream_builder_test_route.dart';
 import 'package:flutter_demo/guide/07/value_listenable_test_route.dart';
+import 'package:flutter_demo/guide/08/main_event_widget_route.dart';
 import 'package:flutter_demo/guide/08/notification_test_route.dart';
 import 'package:flutter_demo/ui/page/page_artice.dart';
 
@@ -40,6 +44,10 @@ class ArticleApp extends StatelessWidget {
             children: [
               createItem(context, const MainBaseWidgetRoute(), "03.基础组件"),
               createItem(context, const MainLayoutWidgetRoute(), "04.布局组件"),
+              createItem(context, const MainContainerWidgetRoute(), "05.容器组件"),
+              createItem(context, const MainScrollWidgetRoute(), "06.可滚动组件"),
+              createItem(context, const MainFunctionWidgetRoute(), "07.功能型组件"),
+              createItem(context, const MainEventWidgetRoute(), "08.事件处理与通知"),
             ],
           );
         }),

@@ -13,38 +13,45 @@ class _AlertDialogTestRouteState extends State<AlertDialogTestRoute> {
   @override
   Widget build(BuildContext context) {
     print("build");
-    return Column(
-      children: [
-        ElevatedButton(
-            onPressed: () async {
-              //弹出对话框等待其关闭,返回值用Future包裹，使用async 、 await搭配使用。
-              bool? delete = await showDeleteConfirmDialog1();
-              if (delete == null) {
-                print("取消删除");
-              } else {
-                print("已确认删除");
-              }
-            },
-            child: Text("对话框1")),
-        ElevatedButton(onPressed: () => changeLanguage(), child: Text("对话框2")),
-        ElevatedButton(onPressed: () => showListDialog(), child: Text("对话框3")),
-        ElevatedButton(
-            onPressed: () => showDeleteConfirmDialog2(), child: Text("对话框4")),
-        ElevatedButton(
-          child: Text("显示底部菜单列表"),
-          onPressed: () async {
-            int? type = await _showModalBottomSheet();
-            print(type);
-          },
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("07.功能型组件"),
         ),
-        ElevatedButton(
-            onPressed: () => showLoadingDialog(), child: Text("加载框")),
-        ElevatedButton(
-            onPressed: () => _showDatePicker1(), child: Text("Android 日历")),
-        ElevatedButton(
-            onPressed: () => _showDatePicker2(), child: Text("iOS 日历")),
-      ],
-    );
+        body: Column(
+          children: [
+            ElevatedButton(
+                onPressed: () async {
+                  //弹出对话框等待其关闭,返回值用Future包裹，使用async 、 await搭配使用。
+                  bool? delete = await showDeleteConfirmDialog1();
+                  if (delete == null) {
+                    print("取消删除");
+                  } else {
+                    print("已确认删除");
+                  }
+                },
+                child: Text("对话框1")),
+            ElevatedButton(
+                onPressed: () => changeLanguage(), child: Text("对话框2")),
+            ElevatedButton(
+                onPressed: () => showListDialog(), child: Text("对话框3")),
+            ElevatedButton(
+                onPressed: () => showDeleteConfirmDialog2(),
+                child: Text("对话框4")),
+            ElevatedButton(
+              child: Text("显示底部菜单列表"),
+              onPressed: () async {
+                int? type = await _showModalBottomSheet();
+                print(type);
+              },
+            ),
+            ElevatedButton(
+                onPressed: () => showLoadingDialog(), child: Text("加载框")),
+            ElevatedButton(
+                onPressed: () => _showDatePicker1(), child: Text("Android 日历")),
+            ElevatedButton(
+                onPressed: () => _showDatePicker2(), child: Text("iOS 日历")),
+          ],
+        ));
   }
 
   //弹出对话框
@@ -220,7 +227,6 @@ class _AlertDialogTestRouteState extends State<AlertDialogTestRoute> {
     );
   }
 
-
   // 弹出底部菜单列表模态对话框
   Future<int?> _showModalBottomSheet() {
     return showModalBottomSheet<int>(
@@ -268,9 +274,13 @@ class _AlertDialogTestRouteState extends State<AlertDialogTestRoute> {
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CircularProgressIndicator(value: .8,),
-                  Padding(padding: EdgeInsets.only(top: 26.0),
-                    child: Text("正在加载，请稍后。。。"),)
+                  CircularProgressIndicator(
+                    value: .8,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 26.0),
+                    child: Text("正在加载，请稍后。。。"),
+                  )
                 ],
               ),
             ),
@@ -280,7 +290,6 @@ class _AlertDialogTestRouteState extends State<AlertDialogTestRoute> {
     );
   }
 
-
   ///日历选择
   Future<DateTime?> _showDatePicker1() {
     var date = DateTime.now();
@@ -288,7 +297,8 @@ class _AlertDialogTestRouteState extends State<AlertDialogTestRoute> {
       context: context,
       initialDate: date,
       firstDate: date,
-      lastDate: date.add( //未来30天可选
+      lastDate: date.add(
+        //未来30天可选
         Duration(days: 30),
       ),
     );

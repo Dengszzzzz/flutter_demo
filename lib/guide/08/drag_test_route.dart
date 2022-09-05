@@ -15,7 +15,11 @@ class _DragTestRouteState extends State<DragTestRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+        appBar: AppBar(
+        title: Text("07.功能型组件"),
+    ),
+    body: Stack(
       children: [
         Positioned(
             top: _top,
@@ -45,6 +49,6 @@ class _DragTestRouteState extends State<DragTestRoute> {
             )
         )
       ],
-    );
+    ));
   }
 }

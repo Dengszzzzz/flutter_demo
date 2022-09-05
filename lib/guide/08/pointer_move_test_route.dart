@@ -27,7 +27,11 @@ class _PointerMoveTestRouteState extends State<PointerMoveTestRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Listener(
+    return Scaffold(
+        appBar: AppBar(
+        title: Text("07.功能型组件"),
+    ),
+    body: Listener(
       child: Container(
         alignment: Alignment.center,
         color: Colors.blue,
@@ -48,7 +52,7 @@ class _PointerMoveTestRouteState extends State<PointerMoveTestRoute> {
       onPointerUp: (PointerUpEvent event) => setState(() {
         _event = event;
       }),
-    );
+    ));
   }
 
   @override
