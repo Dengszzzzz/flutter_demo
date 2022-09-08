@@ -1,0 +1,108 @@
+{
+  "@@last_modified": "2022-09-08T15:21:04.279397",
+  "@@locale":"en_US",
+  "title": "Flutter APP",
+  "@title": {
+    "description": "Title for the Demo application",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "Home": "Home",
+  "@Home": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "Language": "Language",
+  "@Language": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "Theme": "Theme",
+  "@Theme": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "Login": "Login",
+  "@Login": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "UserName": "UserName",
+  "@UserName": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "Please input username": "Please input username",
+  "@Please input username": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "Password": "Password",
+  "@Password": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "Please input password": "Please input password",
+  "@Please input password": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "username or password wrong!": "username or password wrong!",
+  "@username or password wrong!": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "no description": "no description",
+  "@no description": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "logout": "logout",
+  "@logout": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "logoutTip": "logoutTip",
+  "@logoutTip": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "cancel": "cancel",
+  "@cancel": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "yes": "yes",
+  "@yes": {
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "remainingEmailsMessage": "{howMany,plural, =0{There are no emails left}=1{There is {howMany} email left}other{There are {howMany} emails left}}",
+  "@remainingEmailsMessage": {
+    "description": "How many emails remain after archiving.",
+    "type": "text",
+    "placeholders_order": [
+      "howMany"
+    ],
+    "placeholders": {
+      "howMany": {
+        "example": 42
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "@@last_modified": "2022-09-07T21:36:18.303374",
+  "@@locale":"zh_CN",
+  "title": "Github客户端",
+  "@title": {
+    "description": "Title for the Demo application",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "Home": "首页",
+  "@Home": {
+        "type": "text",
+        "placeholders_order": [],
+        "placeholders": {}
+  },
+  "Language": "语言",
+    "@Language": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "Theme": "换肤",
+    "@Theme": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "Login": "登录",
+    "@Login": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "UserName": "用户名",
+    "@UserName": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "Please input username": "请输入用户名",
+    "@Please input username": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "Password": "密码",
+    "@Password": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "Please input password": "请输入密码",
+    "@Please input password": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "username or password wrong!": "用户名或密码错误!",
+    "@username or password wrong!": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "no description": "暂无介绍",
+    "@no description": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "logout": "注销",
+    "@logout": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "logoutTip": "注销提示",
+    "@logoutTip": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "cancel": "取消",
+    "@cancel": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+    "yes": "确认",
+    "@yes": {
+      "type": "text",
+      "placeholders_order": [],
+      "placeholders": {}
+    },
+  "remainingEmailsMessage": "{howMany,plural, =0{没有未读邮件}=1{有{howMany}封未读邮件}other{有{howMany}封未读邮件}}",
+  "@remainingEmailsMessage": {
+    "description": "How many emails remain after archiving.",
+    "type": "text",
+    "placeholders_order": [
+      "howMany"
+    ],
+    "placeholders": {
+      "howMany": {
+        "example": 42
+      }
+    }
+  }
+}

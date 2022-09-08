@@ -1,0 +1,135 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_demo/githupdemo/common/global.dart';
+import 'package:flutter_demo/githupdemo/common/http/git.dart';
+import 'package:flutter_demo/githupdemo/common/user_model.dart';
+import 'package:flutter_demo/l10n/localization_intl.dart';
+import 'package:flutter_demo/models/user.dart';
+import 'package:provider/provider.dart';
+
+import '../common/utils/toast_util.dart';
+
+class LoginRoute extends StatefulWidget {
+  const LoginRoute({Key? key}) : super(key: key);
+
+  @override
+  State<LoginRoute> createState() => _LoginRouteState();
+}
+
+class _LoginRouteState extends State<LoginRoute> {
+  TextEditingController _unameController = TextEditingController();
+  TextEditingController _pwdController = TextEditingController();
+  bool pwdShow = false;
+  //FixMe:干嘛用的？
+  GlobalKey _formKey = GlobalKey<FormState>();
+  bool _nameAutoFocus = true;
+
+  @override
+  void initState() {
+    //自动填充上次登录的用户名，填充后将焦点定位到密码输入框
+    _unameController.text = Global.profile.lastLogin ?? "";
+    if (_unameController.text.isNotEmpty) {
+      _nameAutoFocus = false;
+    }
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var gm = GmLocalizations.of(context)!;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(gm.login),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          //FixMe:干嘛用的？
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          child: Column(
+            children: [
+              TextFormField(
+                autofocus: _nameAutoFocus,
+                controller: _unameController,
+                decoration: InputDecoration(
+                  labelText: gm.userName,
+                  hintText: gm.userName,
+                  prefixIcon: Icon(Icons.person)
+                ),
+                //校验用户名（不为空）
+                validator: (v){
+                  return v==null ||v.trim().isNotEmpty ? null:gm.userNameRequired;
+                },
+              ),
+
+              TextFormField(
+                controller: _pwdController,
+                autofocus: !_nameAutoFocus,
+                decoration: InputDecoration(
+                    labelText: gm.password,
+                    hintText: gm.password,
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                          pwdShow ? Icons.visibility_off : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          pwdShow = !pwdShow;
+                        });
+                      },
+                    )),
+                obscureText: !pwdShow,
+                //校验密码（不能为空）
+                validator: (v) {
+                  return v==null||v.trim().isNotEmpty ? null : gm.passwordRequired;
+                },
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(top: 25),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints.expand(height: 55.0),
+                  child: ElevatedButton(
+                    // color: Theme.of(context).primaryColor,
+                    onPressed: _onLogin,
+                    // textColor: Colors.white,
+                    child: Text(gm.login),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _onLogin() async{
+    //先验证各个表单字段是否合法
+    if((_formKey.currentState as FormState).validate()){
+      //此处应该 showLoading(context);
+      User? user;
+      try{
+        user = await Git(context).login(_unameController.text, _pwdController.text);
+        //因为登录页返回后，首页会build，所以我们传false，更新user后不触发更新
+        Provider.of<UserModel>(context,listen: false).user = user;
+      } on DioError catch(e){
+        //登录失败则提示
+        if(e.response?.statusCode == 401){
+          LeoToast.showError(GmLocalizations.of(context)!.userNameOrPasswordWrong);
+        }else{
+          LeoToast.showError(e.toString());
+        }
+      } finally{
+        //隐藏loading框
+        //Navigator.of(context).pop();
+      }
+
+      //登录成功则返回
+      if(user != null){
+        Navigator.of(context).pop();
+      }
+    }
+  }
+}
