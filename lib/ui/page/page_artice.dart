@@ -1,4 +1,4 @@
-import 'package:banner_view/banner_view.dart';
+//import 'package:banner_view/banner_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/ui/http/api.dart';
 import 'package:flutter_demo/ui/page/page_webview.dart';
@@ -139,7 +139,8 @@ class _ArticlePageState extends State<ArticlePage> {
       return Container(
         //MediaQuery.of(context).size.height: 全屏幕高度
         height: MediaQuery.of(context).size.height * 0.3,
-        child: _bannerView(),
+       // child: _bannerView(),
+        child: Text("banner_view nonull safety"),
       );
     }
 
@@ -148,12 +149,12 @@ class _ArticlePageState extends State<ArticlePage> {
     return ArticleItem(itemData);
   }
 
-  Widget? _bannerView() {
+  /*Widget? _bannerView() {
     //map:转换 ,将List中的每一个条目执行 map方法参数接收的这个方法,这个方法返回T类型，
     //map方法最终会返回一个  Iterable<T>
-    /*List<Widget> list = banners.map((item) {
+    *//*List<Widget> list = banners.map((item) {
       return Image.network(item['imagePath'], fit: BoxFit.cover); //fit 图片填满容器
-    }).toList();*/
+    }).toList();*//*
     var list = banners.map((item){
       //自动增加点击水波纹的widget
       return InkWell(
@@ -169,5 +170,5 @@ class _ArticlePageState extends State<ArticlePage> {
     return list.isNotEmpty
         ? BannerView(list, intervalDuration: const Duration(seconds: 3))
         : null;
-  }
+  }*/
 }
