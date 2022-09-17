@@ -1,6 +1,7 @@
 package com.dengzh.flutter_demo
 
 import android.content.Context
+import android.util.Log
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodCall
@@ -31,7 +32,7 @@ public class MyFlutterPlugin:FlutterPlugin,MethodChannel.MethodCallHandler {
     }
 
     override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
-      //  teardownChannel()
+        teardownChannel()
     }
 
     /**
@@ -41,14 +42,12 @@ public class MyFlutterPlugin:FlutterPlugin,MethodChannel.MethodCallHandler {
         if (call.method.equals("getPlatformVersion")){
             result.success("Android " + android.os.Build.VERSION.RELEASE)
         }else{
-            result.success("这是错误的")
-           // result.notImplemented()
+            result.notImplemented()
         }
     }
 
-
     private fun setupChannel(messenger: BinaryMessenger, context: Context) {
-        channel = MethodChannel(messenger,"my_flutter_plugin")
+        channel = MethodChannel(messenger,"dzh/my_flutter_plugin")
         channel?.setMethodCallHandler(this)
     }
 
