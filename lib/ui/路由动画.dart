@@ -69,7 +69,7 @@ class SecondRoute extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Text("第一个页面"),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               //路由pop弹出
               Navigator.pop(context, "结束");

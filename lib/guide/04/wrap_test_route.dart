@@ -38,7 +38,7 @@ class _WrapTestRouteState extends State<WrapTestRoute> {
             children: [
               _chipWidget('A', 'Hamilton'),
               _chipWidget('M', 'Lafayette'),
-              _chipWidget('H', 'Mulligan'),
+              _chipWidget('H', 'MulliganLaurensLaurensLaureLaurensLaLaurensLaurensLaurensLaurensurensLaurensns'),
               _chipWidget('J', 'Laurens'),
             ],
           )

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+///1、直接用构造函数，指定children，适用于少数据多样式列表。
+///2、ListView.builder、ListView.separated，指定itemBuilder，适用于多数据列表。
+///   可以指定itemExtent指定高度，也可以prototypeItem让系统自己去根据这个itemWidget测量高度。
+///3、
 class ListViewTestRoute extends StatefulWidget {
   const ListViewTestRoute({Key? key}) : super(key: key);
 
@@ -85,9 +89,12 @@ class _ListViewTestRouteState extends State<ListViewTestRoute> {
         ),
         //可能会想着竖直列表，ListTile占一份，剩下的空间是ListView，然而此时 ListView高度边界无法确定。
         //可以用任何容器组件包裹，设置高度。此处用Expanded获取最大高度合适。
-        // ListView.builder(itemBuilder: (context,index){
-        //   return ListTile(title: Text("$index"),);
-        // })
+        //  ListView.builder(
+        //    itemBuilder: (context,index){
+        //      return ListTile(title: Text("$index"),);
+        //    },
+        //   // shrinkWrap: true,  //加了这句直接卡死  https://zhuanlan.zhihu.com/p/644312619
+        //  )
         Expanded(child: ListView.builder(itemBuilder: (context, index) {
           return ListTile(
             title: Text("$index"),

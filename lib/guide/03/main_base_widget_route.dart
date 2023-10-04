@@ -5,7 +5,7 @@ import 'package:flutter_demo/guide/03/progress_indicator_test_route.dart';
 import 'package:flutter_demo/guide/03/switch_checkbox_test_route.dart';
 import 'package:flutter_demo/guide/03/text_field_form_test_route.dart';
 import 'package:flutter_demo/guide/03/text_test_route.dart';
-import 'package:flutter_demo/util.dart';
+import 'package:flutter_demo/guide/util.dart';
 
 import 'text_field_form_test_route2.dart';
 

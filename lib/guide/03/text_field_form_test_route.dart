@@ -16,7 +16,6 @@ class _TextFieldAndFormTestRouteState extends State<TextFieldAndFormTestRoute> {
   //2.onChange触发。
   //两种方式相比，onChanged是专门用于监听文本变化，而controller的功能却多一些， 除了能监听文本变化外，它还可以设置默认值、选择文本
   TextEditingController _unameController = TextEditingController();
-
   //控制焦点
   //焦点可以通过FocusNode和FocusScopeNode来控制，默认情况下，焦点由FocusScope来管理，
   // 它代表焦点控制范围，可以在这个范围内可以通过FocusScopeNode在输入框之间移动焦点、

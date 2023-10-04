@@ -5,7 +5,7 @@ import 'package:flutter_demo/guide/04/flex_test_route.dart';
 import 'package:flutter_demo/guide/04/layout_builder_test_route.dart';
 import 'package:flutter_demo/guide/04/row_test_route.dart';
 import 'package:flutter_demo/guide/04/wrap_test_route.dart';
-import 'package:flutter_demo/util.dart';
+import 'package:flutter_demo/guide/util.dart';
 
 import 'column_test_route.dart';
 import 'stack_test_route.dart';

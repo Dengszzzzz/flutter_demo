@@ -11,7 +11,7 @@ import 'package:flutter_demo/guide/08/drag_test_route.dart';
 import 'package:flutter_demo/guide/08/gesture_test_route.dart';
 import 'package:flutter_demo/guide/08/notification_test_route.dart';
 import 'package:flutter_demo/guide/08/pointer_move_test_route.dart';
-import 'package:flutter_demo/util.dart';
+import 'package:flutter_demo/guide/util.dart';
 
 class MainEventWidgetRoute extends StatelessWidget {
   const MainEventWidgetRoute({Key? key}) : super(key: key);

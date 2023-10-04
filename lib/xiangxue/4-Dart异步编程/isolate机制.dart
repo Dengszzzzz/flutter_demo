@@ -8,7 +8,9 @@ void main(){
   //创建一个消息接收器
   var receivePort = ReceivePort();
 
+
   //将消息接收器当中的发送器 发给 子isolate
+  //Isolate.spawn 创建子Isolate，在子Isolate里执行 entryPoint 方法
   Isolate.spawn(entryPoint, receivePort.sendPort);
 
   //从消息接收器中读取消息
@@ -26,8 +28,9 @@ void main(){
   sleep(Duration(seconds: 3));
 }
 
-
+//@params sendPort 消息发射端口
 void entryPoint(SendPort sendPort) {
+  //虽然跨了Isolate，但是在同一个线程，操作i还是线程安全的
   i = 100;
   print(i);
   var receivePort = new ReceivePort();

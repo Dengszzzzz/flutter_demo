@@ -9,7 +9,6 @@ void main(){
   f.then((value){
      print(value);
   });*/
-
   new File(r"G:\flutter_project\flutter_demo\11.txt").readAsString().then((String s) {
     //返回void 或 Future
     print(s);

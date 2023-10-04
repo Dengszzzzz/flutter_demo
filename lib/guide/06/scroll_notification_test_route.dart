@@ -28,7 +28,7 @@ class _ScrollNotificationTestRouteState
       appBar: AppBar(
         title: Text("滚动通知"),
       ),
-      body: Scrollbar(
+      body: Scrollbar(  //这里不用Scrollbar也行，加了只是为了看滑动条而已
         child: NotificationListener<ScrollNotification>(
           onNotification:(ScrollNotification notification){
 
@@ -50,8 +50,8 @@ class _ScrollNotificationTestRouteState
               _progress = "${(progress * 100).toInt()}%";
             });
             print("BottomEdge: ${notification.metrics.extentAfter == 0}");
-            return false;  //代表不拦截通知
-            //return true; //放开此行注释后，进度条将失效
+            return false;  //代表不拦截冒泡，也就是父Widget Scrollbar 的NotificationListener也能收到通知。
+           // return true; //返回true，Scrollbar 的滚动条就不见了
           },
           child: Stack(
             alignment: Alignment.center,

@@ -26,6 +26,28 @@ class _FittedBoxTestRouteState extends State<FittedBoxTestRoute> {
           //情况同上， 只是这里指定了包含，也就是60*70会按比例缩小放到50*50里，很明显按高度缩放，最终变为[60*5/7,50]。
           _wContainer(BoxFit.contain),
           Text('Flutter中国'),
+
+          // Row(
+          //   children: [
+          //     Text('Flutter中国Flutter中国Flutter中国Flutter中国Flutter中国Flutter中国Flutter中国Flutter中国Flutter中国Flutter中国Flutter中国'),
+          //   ],
+          // ),
+          //溢出
+          Row(
+            children: [
+              Text('Flutter' * 10),
+            ],
+          ),
+          //不溢出
+          FittedBox(
+            fit: BoxFit.contain,
+            //  clipBehavior: Clip.hardEdge,
+            child: Row(
+              children: [
+                Text('Flutter' * 10),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -72,9 +94,12 @@ class _FittedBoxTestRouteState extends State<FittedBoxTestRoute> {
           /// 的 maxWidth 为无限大（double.infinity），因此Row 的最终宽度就是子组件的宽度之和。
           FittedBox(child: _wRow(' 800 ')),
 
-          SingleLineFittedBox(child: _wRow(' 800 '),),
-          SingleLineFittedBox(child: _wRow(' 90000000000000000 '),),
-
+          SingleLineFittedBox(
+            child: _wRow(' 800 '),
+          ),
+          SingleLineFittedBox(
+            child: _wRow(' 90000000000000000 '),
+          ),
         ]
             .map((e) => Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),

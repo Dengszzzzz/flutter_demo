@@ -42,13 +42,18 @@ class _ScrollControllerTestRouteState extends State<ScrollControllerTestRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("滚动控制"),),
-      body: Scrollbar(
-        child: ListView.builder(
-          itemBuilder: (context, index) => ListTile(title: Text("$index"),),
-          itemCount: 100,
-          itemExtent: 50,
-          controller: _controller,),
-      ),
+      // body: Scrollbar(
+      //   child: ListView.builder(
+      //     itemBuilder: (context, index) => ListTile(title: Text("$index"),),
+      //     itemCount: 100,
+      //     itemExtent: 50,
+      //     controller: _controller,),
+      // ),
+      body: ListView.builder(
+        itemBuilder: (context, index) => ListTile(title: Text("$index"),),
+        itemCount: 100,
+        itemExtent: 50,
+        controller: _controller,),
       floatingActionButton: !showToTopBtn ? null : FloatingActionButton(
         onPressed: () {
           //无动画的

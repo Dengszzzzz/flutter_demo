@@ -35,10 +35,12 @@ class MainRoute extends StatelessWidget {
               /// MaterialApp->\_MaterialAppState->WidgetsApp->\_WidgetsAppState
               ///
               /// 解决方法有三：
-              /// 1.在MaterialApp以下用Buidler包裹一层。
+              /// 1.在MaterialApp以下用Builder包裹一层，目的是获取MaterialApp的context。
               /// 2.在MaterialApp下再创建一个 Widget。
               /// 3.使用navigatorKey
               ///
+              //注意，这里命名放在 MaterialApp 下，MaterialApp里有Navigator，为什么还报错？
+              //因为这个context是MainRoute的context，而不是 MaterialApp 的context。
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return SecondRoute();
               }));

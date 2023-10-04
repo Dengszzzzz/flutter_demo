@@ -3,7 +3,7 @@ import 'package:flutter_demo/guide/05/container_test_route.dart';
 import 'package:flutter_demo/guide/05/fitted_box_test_route.dart';
 import 'package:flutter_demo/guide/05/scaffold_test_route.dart';
 import 'package:flutter_demo/guide/05/scaffold_test_route2.dart';
-import 'package:flutter_demo/util.dart';
+import 'package:flutter_demo/guide/util.dart';
 
 
 
