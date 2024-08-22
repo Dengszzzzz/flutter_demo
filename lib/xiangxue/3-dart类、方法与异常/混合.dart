@@ -20,6 +20,21 @@ mixin class B{
   }
 }
 
+
+class D {
+  void doSomething() {
+    print('Doing something in D');
+  }
+}
+
+/// 2.希望mixin只能被某些特定的类使用，可以使用on关键字来实现
+/// 如限制 OnlyD 只能被D或D的子类使用
+mixin OnlyD on D{
+  void sayHello() {
+    print('Hello from OnlyD');
+  }
+}
+
 // 满足了我们的多继承的需求
 class C with B, A{
 
@@ -31,6 +46,7 @@ class C with B, A{
 
   }*/
 }
+
 
 //C 就是A B的混合类
 //class C = Object with A, B;
