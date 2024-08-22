@@ -17,6 +17,7 @@ class _FittedBoxTestRouteState extends State<FittedBoxTestRoute> {
       ),
       body: Column(
         children: [
+          //FixMe：FittedBox 特别适用于需要根据容器大小自动调整大小的情况。
           //情况一：可以理解为Container -> FittedBox -> Container约束条件的传递，指定BoxFit.none不适配，
           //但FittedBox没有把约束条件传给第二个Container，所以它显示还是60*70蓝色。
           //但是Container自身的约束条件是不被子Widget影响的，所以相当于它还是占了50*50的空间，而Text跟在它后面build
@@ -33,18 +34,20 @@ class _FittedBoxTestRouteState extends State<FittedBoxTestRoute> {
           //   ],
           // ),
           //溢出
+          const Text('Text 溢出演示:'),
           Row(
             children: [
-              Text('Flutter' * 10),
+              Text('Flutter' * 100),
             ],
           ),
           //不溢出
+          const Text('Text 不溢出演示，会缩小:'),
           FittedBox(
             fit: BoxFit.contain,
             //  clipBehavior: Clip.hardEdge,
             child: Row(
               children: [
-                Text('Flutter' * 10),
+                Text('Flutter' * 15),
               ],
             ),
           ),

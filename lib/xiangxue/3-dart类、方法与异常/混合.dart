@@ -1,15 +1,17 @@
 
 //知识点：
-//1.with 混合，被mixin(混入)的类不能有构造函数.
-//2.C with  B,A  同名方法优先级是自身> 右到左。
+//1.with 混合，被mixin(混入)的类不能有构造函数，且要指定mixin。如果是既要继承又要混入，指定mixin class
+//2.C with  B, A  同名方法优先级是自身> 右到左。
 //3.如果同时使用 extends with implements，顺序就是如此。
 
-class A  {
+mixin A  {
   void a(){
     print("A  的a方法!");
   }
 }
-class B{
+
+//Dart 3.0开始，出现 mixin class
+mixin class B{
   void b(){
     print("b方法");
   }
@@ -19,7 +21,7 @@ class B{
 }
 
 // 满足了我们的多继承的需求
-class C with  B,A{
+class C with B, A{
 
   void c(){
 

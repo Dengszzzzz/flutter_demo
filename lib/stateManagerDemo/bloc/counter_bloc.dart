@@ -11,7 +11,7 @@ abstract class CounterEvent{}
 ///具体事件1
 class CounterIncrementPressed extends CounterEvent{}
 ///具体事件2
-class CounterDecrementPressed extends CounterEvent {}
+class CounterDecrementPressed extends CounterEvent{}
 
 ///Bloc的用法，CounterEvent事件，int状态
 class CounterBloc extends Bloc<CounterEvent,int>{

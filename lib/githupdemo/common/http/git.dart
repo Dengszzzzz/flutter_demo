@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:dio/adapter.dart';
+import 'package:dio/io.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/githupdemo/common/global.dart';
 import 'package:flutter_demo/models/index.dart';
@@ -39,16 +39,22 @@ class Git {
 
     //在调试模式下需要抓包调试，所以使用代理，并禁用Https证书校验
     if (!Global.isRelease) {
-      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-          (client) {
-        // client.findProxy = (uri) {
-        //   return 'PROXY 192.168.50.154:8888';
-        // };
+      dio.httpClientAdapter = IOHttpClientAdapter(
+        createHttpClient: () {
+          final client = HttpClient();
+          //1.代理
+          // client.findProxy = (uri) {
+          //   // 将请求代理至 localhost:8888。
+          //   // 请注意，代理会在你正在运行应用的设备上生效，而不是在宿主平台生效。
+          //   return 'PROXY localhost:8888';
+          // };
 
-        //代理工具会提供一个抓包的自签名证书，会通不过证书校验，所以禁用证书校验
-        client.badCertificateCallback =
-            (X509Certificate cert, String host, int port) => true;
-      };
+          //2.HTTPS 证书校验
+          //代理工具会提供一个抓包的自签名证书，会通不过证书校验，所以禁用证书校验
+          client.badCertificateCallback = (cert, host, port) => true;
+          return client;
+        }
+      );
     }
   }
 

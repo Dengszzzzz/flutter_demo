@@ -116,6 +116,7 @@ class _NestScrollViewTestRouteState extends State<NestScrollViewTestRoute> {
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return [
+              //SliverOverlapAbsorber：获取 SliverAppBar 返回时遮住内部可滚动组件的部分的长度，这个长度就是 overlap（重叠） 的长度。
               SliverOverlapAbsorber(
                 handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                 sliver: SliverAppBar(
@@ -142,6 +143,7 @@ class _NestScrollViewTestRouteState extends State<NestScrollViewTestRoute> {
                 return CustomScrollView(
                   key: PageStorageKey<String>(name),
                   slivers: <Widget>[
+                    //SliverOverlapInjector：它会将 SliverOverlapAbsorber 中获取的overlap 长度应用到内部可滚动组件中。
                     SliverOverlapInjector(
                       handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                     ),

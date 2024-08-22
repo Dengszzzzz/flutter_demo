@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class SwitchAndCheckBoxTestRoute extends StatefulWidget {
@@ -29,7 +27,9 @@ class _SwitchAndCheckBoxTestRouteState
           Switch(
               value: _switchSelected,
               onChanged: (value) {
-                _switchSelected = value;
+                setState(() {
+                  _switchSelected = value;
+                });
               }),
 
           //复选框value可能为null，可以指定三种状态
@@ -38,7 +38,9 @@ class _SwitchAndCheckBoxTestRouteState
               activeColor: Colors.red, //选中时的颜色
               tristate: true,  //是否为三态，增加一个null
               onChanged: (value) {
-                _checkBoxSelected = value;
+                setState(() {
+                  _checkBoxSelected = value;
+                });
               })
         ],
       ),

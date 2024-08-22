@@ -6,15 +6,16 @@ dependencyResolutionManagement {
         maven {
             allowInsecureProtocol = true
             url 'https://maven.aliyun.com/repository/google' }
-        maven {
-            allowInsecureProtocol = true
-            url 'https://maven.aliyun.com/repository/jcenter' }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'https://maven.aliyun.com/repository/jcenter' }
         maven {
             allowInsecureProtocol = true
             url 'https://maven.aliyun.com/repository/public' }
         maven {
             allowInsecureProtocol = true
             url 'http://download.flutter.io' }
+        google()
         mavenCentral()
     }
 }

@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-///Cubit的用法
+///Cubit的用法，此处演示如何通过函数来触发UI状态改变，此处通知做亮暗色切换
+///
 ///1、创建 Cubit，定义管理的状态类型，这里是ThemeData
 class ThemeCubit extends Cubit<ThemeData>{
 

@@ -18,8 +18,8 @@ class HttpManager{
   init(){
     BaseOptions options = BaseOptions(
       baseUrl: Api.baseUrl,
-      connectTimeout: 5000,
-      receiveTimeout: 3000,
+      connectTimeout: const Duration(seconds: 5),
+      receiveTimeout: const Duration(seconds: 3),
     );
     _dio = Dio(options);
   }
