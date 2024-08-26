@@ -1,49 +1,9 @@
-buildscript {
-    ext.kotlin_version = '1.7.10'
+allprojects {
     repositories {
-
-        maven {
-            allowInsecureProtocol = true
-            url 'https://maven.aliyun.com/repository/google' }
-//        maven {
-//            allowInsecureProtocol = true
-//            url 'https://maven.aliyun.com/repository/jcenter' }
-        maven {
-            allowInsecureProtocol = true
-            url 'https://maven.aliyun.com/repository/public' }
-        maven {
-            allowInsecureProtocol = true
-            url 'http://download.flutter.io' }
         google()
         mavenCentral()
     }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
 }
-/*
-allprojects {
-    repositories {
-        //解决 Unresolved reference: FlutterActivity 报红问题。
-        maven {
-            allowInsecureProtocol = true
-            url 'http://download.flutter.io' }
-        maven {
-            allowInsecureProtocol = true
-            url 'https://maven.aliyun.com/repository/google' }
-        maven {
-            allowInsecureProtocol = true
-            url 'https://maven.aliyun.com/repository/jcenter' }
-        maven {
-            allowInsecureProtocol = true
-            url 'https://maven.aliyun.com/repository/public' }
-
-        mavenCentral()
-
-    }
-}*/
 
 rootProject.buildDir = '../build'
 subprojects {
