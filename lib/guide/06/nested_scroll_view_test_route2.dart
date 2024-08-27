@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../07/colorAndTheme/nav_bar.dart';
+
 ///需求：页面有固定的appBar，然后垂直展示banner、tabBar、pageView，要求滚动后tabBar吸顶，listView继续滑动。
 /// (Sliver组件之SliverAppBar)[https://www.jianshu.com/p/ffb9ebae3ad6]
 class NestedScrollViewTestRoute2 extends StatefulWidget {
@@ -21,13 +23,12 @@ class _NestedScrollViewTestRoute2State extends State<NestedScrollViewTestRoute2>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabController = TabController(length: tabs.length, vsync: this);
 
     _scrollController = ScrollController();
     _scrollController.addListener(() {
-      //在这里setState()更新appBar的透明度是不合理的，因为触发全部的Widget Build了，应该通过状态管理让appBar更新才行
+      //FixMe：在这里setState()更新appBar的透明度是不合理的，因为触发全部的Widget Build了，应该通过状态管理让appBar更新才行
       //此处为了效果展示，暂不处理优化。
       print(_scrollController.offset); //打印滚动位置
       //随着向上滚动，titleBar的透明度逐渐变为1
@@ -127,18 +128,19 @@ class _NestedScrollViewTestRoute2State extends State<NestedScrollViewTestRoute2>
     //return _buildTabBarView();
   }
 
-  ///这样的方式，发现FlexibleSpaceBar的内容会和title重叠
   _buildOpacityTitle() {
     return Opacity(
       opacity: opacityAppBar,
-      child: Text("SliverAppBar"),
+      child: const Text("SliverAppBar"),
     );
+    //return  const NavBar(color: Colors.white, title: "SliverAppBar");
   }
 
   _buildSliverAppBar() {
     return SliverAppBar(
       ///1、AppBar相关的东西
       //leading: Container(),
+      //automaticallyImplyLeading: false,
       title: _buildOpacityTitle(),
       centerTitle:true,
       //actions: [],
@@ -148,7 +150,7 @@ class _NestedScrollViewTestRoute2State extends State<NestedScrollViewTestRoute2>
 
       ///2、设置固定、漂浮、拉伸优先级
       pinned: true,
-      //要折叠起来显示地下Bottom，这个必须设置为true
+      //设置为 true，SliverAppBar 会在用户向下滚动时立即出现，而不是等到整个内容都滚动到顶部时才出现。
       floating: false,
       //这个是指appBar是否能划出屏幕外，这里并不希望显示appBar，所以设为true可移出
       snap: false,
@@ -177,9 +179,9 @@ class _NestedScrollViewTestRoute2State extends State<NestedScrollViewTestRoute2>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: kToolbarHeight + MediaQuery.of(context).padding.top),
-              Text("这是head 1"),
-              Text("这是head 2"),
-              Text("这是head 3"),
+              Text("这是head 1111111111111111111"),
+              Text("这是head 2222222222222222222"),
+              Text("这是head 3333333333333333333"),
               Text("这是head 3"),
               Text("这是head 3"),
             ],

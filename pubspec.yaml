@@ -54,6 +54,9 @@ dependencies:
   path_provider: ^2.1.4
   web_socket_channel: ^3.0.1
 
+  # 类似于SmartRefreshLayout的控件
+  flutter_easy_refresh: ^3.4.0
+
   #不知哪个库间接依赖 win32 5.0.9版本报错，此处直接升级为5.5.4版本
   win32: ^5.5.4
 

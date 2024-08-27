@@ -48,7 +48,7 @@ class MainScrollWidgetRoute extends StatelessWidget {
           createItem(context, const PageViewTestRoute(), "PageView"),
           createItem(context, const TabBarViewTestRoute(), "TabBarView - TabController"),
           createItem(context, const TabBarViewTestRoute2(), "TabBarView - DefaultTabController"),
-          createItem(context, const CustomScrollViewTestRoute(), "CustomScrollView"),
+          createItem(context, const CustomScrollViewTestRoute(), "CustomScrollView，包含两个可滚动组件"),
           createItem(context, const NestScrollViewTestRoute(), "NestScrollView"),
           createItem(context, const NestedScrollViewTestRoute2(), "NestScrollView + tabBar吸顶"),
           createItem(context, const NestedScrollViewTestRoute3(), "tabBar吸顶,titleBar显示"),

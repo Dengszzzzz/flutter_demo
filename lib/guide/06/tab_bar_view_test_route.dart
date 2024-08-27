@@ -18,6 +18,7 @@ class _TabBarViewTestRouteState extends State<TabBarViewTestRoute>
     _tabController = TabController(length: tabs.length, vsync: this);
   }
 
+  /// TabBar 和 TabBarView 共用一个 TabController
   @override
   Widget build(BuildContext context) {
     return Scaffold(
